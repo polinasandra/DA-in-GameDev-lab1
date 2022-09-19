@@ -49,7 +49,7 @@
 ![Скриншот 19-09-2022 184421](https://user-images.githubusercontent.com/113704972/191034577-da2b04b7-bae1-4b12-b9fd-7b64b9f742a2.jpg)
 Добавляем наш скрипт в объект и запускаем код:
 ![Скриншот 19-09-2022 183913](https://user-images.githubusercontent.com/113704972/191034654-cfe6ed1b-92e8-4d33-98f8-06669882402e.jpg)
-
+- Начинаю итерацию. Шаг 1: Инициализация и модель итеративной оптимизации
 
 ## Задание 2
 ### В разделе "Ход работы" пошагово выполнить каждый пункт с описанием и примеров реализации задачи по теме лабораторной работы.
@@ -60,53 +60,80 @@
 - Определяю связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
 ![Скриншот 19-09-2022 192121](https://user-images.githubusercontent.com/113704972/191055044-ece15049-c9b4-4e48-95cc-6b4cf6c1c29f.jpg)
 
-```py
+- Начинаю итерацию. Шаг 1. Инициализация и модель итеративной оптимизации:
+![Скриншот 19-09-2022 204527](https://user-images.githubusercontent.com/113704972/191058485-0ad0caff-00ee-4bc5-bf79-927476020bf9.jpg)
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+- Шаг 2. На второй итерации отображается значения параметров, значения потерь и эффекты визулизации после итерации:
+![Скриншот 19-09-2022 205002](https://user-images.githubusercontent.com/113704972/191059356-e9ec4249-bde7-42dc-a818-db6d7ac13659.jpg)
 
-```
+
+Шаг 3. Третья итерация показывает значения параметров, значения потерь и визуализацию после итерации:
+![Скриншот 19-09-2022 205029](https://user-images.githubusercontent.com/113704972/191059394-99f7df2e-2796-48cd-a740-ac813ec13746.jpg)
+
+
+Шаг 4. На четвёртой итерации отображаются значения параметров, значения потерь и эффекты визулизации:
+![Скриншот 19-09-2022 205038](https://user-images.githubusercontent.com/113704972/191059427-e1c2641d-f6b7-4034-8c56-a0949303a331.jpg)
+
+
+Шаг 5. Пятая итерация показывает значение параметра, значение потерь и эффект визуализации после итерации:
+![Скриншот 19-09-2022 205049](https://user-images.githubusercontent.com/113704972/191059466-25ca7819-dc28-4f35-9fdb-55d8b89f62ce.jpg)
+
+Шаг 6. 10000-я итерация, показывающая значение параметров, потери и визуализацию после итерации:
+![Скриншот 19-09-2022 205207](https://user-images.githubusercontent.com/113704972/191059802-9f30dae2-b51a-41b8-91b4-a2d0be40c104.jpg)
+
+
+
 
 ## Задание 3
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
-
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
+### Изучить код на Python и ответить на вопросы:
 
 ```py
 
-import ScriptEnv
-ScriptEnv.Initialize("Ansoft.ElectronicsDesktop")
-oDesktop.RestoreWindow()
-oProject = oDesktop.NewProject()
-oProject.Rename("C:/Users/denisov.dv/Documents/Ansoft/SphereDIffraction.aedt", True)
-oProject.InsertDesign("HFSS", "HFSSDesign1", "HFSS Terminal Network", "")
-oDesign = oProject.SetActiveDesign("HFSSDesign1")
-oEditor = oDesign.SetActiveEditor("3D Modeler")
-oEditor.CreateSphere(
-	[
-		"NAME:SphereParameters",
-		"XCenter:="		, "0mm",
-		"YCenter:="		, "0mm",
-		"ZCenter:="		, "0mm",
-		"Radius:="		, "1.0770329614269mm"
-	], 
-)
+import numpy as np
+import matplotlib.pyplot as plt
+
+x=[3,21,22,34,54,34,55,67,89,99]
+x=np.array(x)
+y=[2,22,24,65,79,82,55,130,150,199]
+y=np.array(y)
+
+plt.scatter(x,y)
+
+def model(a,b,x):
+    return a*x+b
+
+def loss_function(a,b,x,y):
+    num = len(x)
+    prediction = model(a,b,x)
+    return (0.5/num)*(np.square(prediction-y)).sum()
+
+def optimize(a,b,x,y):
+    num = len(x)
+    prediction = model(a,b,x)
+    da = (1.0/num) * ((prediction -y)*x).sum()
+    db = (1.0/num) * ((prediction - y).sum())
+    a = a-Lr*da
+    b - b - Lr*db
+    return a,b
+
+def iterate(a,b,x,y,times):
+    for i in range(times):
+        a,b = optimize(a,b,x,y)
+        return (a,b)
+
+a=np.random.rand(1)
+print(a)
+b=np.random.rand(1)
+print(b)
+Lr = 0.0000001
+
+a,b = iterate(a,b,x,y,1)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x,prediction)
+
 
 ```
 
