@@ -108,6 +108,7 @@ summary_freq: 10000 # количество опыта, необходимого 
 ![bandicam 2022-10-21 19-11-49-865](https://user-images.githubusercontent.com/113704972/197223201-4f0518fa-a93d-4bfe-8800-8bc42dfb88be.gif)
 ![Скриншот 21-10-2022 193903](https://user-images.githubusercontent.com/113704972/197222379-989280cc-47fa-45a2-9698-e95c7252ee76.jpg)
 
+![Скриншот 21-10-2022 191356](https://user-images.githubusercontent.com/113704972/197225933-d9fedb57-a9d1-4de1-8bcd-098639854279.jpg)
 
 
 
