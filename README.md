@@ -47,7 +47,8 @@
 ![Скриншот 21-10-2022 162137](https://user-images.githubusercontent.com/113704972/197217969-78004ee4-81f9-4805-953e-2f9db03c9f37.jpg)
 
 - Объекту «сфера» добавила компоненты Rigidbody, Decision Requester, Behavior Parameters и настройла их:
-![Скриншот 21-10-2022 172054](https://user-images.githubusercontent.com/113704972/197218140-7c15a0af-a30b-4d8f-ae46-9cf9e5dd02e2.jp
+
+![Скриншот 21-10-2022 172054](https://user-images.githubusercontent.com/113704972/197218140-7c15a0af-a30b-4d8f-ae46-9cf9e5dd02e2.jpg)
 ![Скриншот 21-10-2022 172100](https://user-images.githubusercontent.com/113704972/197218198-086e1a8e-8e87-4c6e-a13b-186c8fb40568.jpg)
 
 - Запустила работу MLAгент'а:
