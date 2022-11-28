@@ -56,12 +56,12 @@
 
 
 - Следующей была операция NAND:
-![Скриншот 25-11-2022 151851](https://user-images.githubusercontent.com/113704972/203976574-186923f6-9dad-4f35-a96e-ca5bd9da91a8.jpg)
+![R6QX2LtdWrM](https://user-images.githubusercontent.com/113704972/204309252-987807f7-7bef-4626-a3ae-08236c7ea4e3.jpg)
 ![Скриншот 25-11-2022 151909](https://user-images.githubusercontent.com/113704972/203976578-1656f000-d8df-4d45-b48f-a7f1755a4c51.jpg)
 Здесь достаточно было 4-х эпох.
 
 - Последней была XOR:
-![Скриншот 25-11-2022 144357](https://user-images.githubusercontent.com/113704972/203976701-c75edef3-a171-4034-bc8a-30120d23166e.jpg)
+![0i-N3FdF8CQ](https://user-images.githubusercontent.com/113704972/204309561-375556e9-59ab-4358-b5d8-e619500f4834.jpg)
 На данной операции я заметила, что, сколько бы эпох я ни выставляла, ошибки были, а перестали появляться лишь к 6-ой эпохе.
 
 ## Задание 2
